@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">FragmentCommunication</string>
+    <string name="callback_error">Activity must implement fragment callbacks.</string>
+    <string name="click_me">Click Me</string>
+</resources>
