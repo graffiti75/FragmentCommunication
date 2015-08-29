@@ -1,5 +1,6 @@
 package com.example.rodrigo.fragmentcommunication.activity;
 
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.app.FragmentManager;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
@@ -18,6 +19,19 @@ public class MainActivity extends FragmentActivity implements Communicator {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        switchContent();
+    }
+
+    //--------------------------------------------------
+    // Methods
+    //--------------------------------------------------
+
+    public void switchContent() {
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentB fragment = new FragmentB();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.add(R.id.id_container, fragment, "fragmentB");
+        fragmentTransaction.commit();
     }
 
     //--------------------------------------------------
@@ -28,7 +42,7 @@ public class MainActivity extends FragmentActivity implements Communicator {
     public void respond(String data) {
         // From fragments we can call this method with the help of reference of communicate.
         FragmentManager fragmentManager = getSupportFragmentManager();
-        FragmentB fragment = (FragmentB)fragmentManager.findFragmentById(R.id.id_fragment_b);
+        FragmentB fragment = (FragmentB) fragmentManager.findFragmentByTag("fragmentB");
         fragment.changeText(data);
     }
 }
