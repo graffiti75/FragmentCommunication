@@ -21,7 +21,7 @@ public class FragmentA extends Fragment implements View.OnClickListener {
     private Button mButton;
 
     //--------------------------------------------------
-    // Activity Life Cycle
+    // Fragment Life Cycle
     //--------------------------------------------------
 
     @Override

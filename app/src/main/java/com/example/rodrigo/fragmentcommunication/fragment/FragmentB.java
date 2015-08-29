@@ -19,7 +19,7 @@ public class FragmentB extends Fragment {
     private TextView mTextView;
 
     //--------------------------------------------------
-    // Attributes
+    // Fragment Life Cycle
     //--------------------------------------------------
 
     @Override
@@ -31,7 +31,7 @@ public class FragmentB extends Fragment {
     }
 
     //--------------------------------------------------
-    // Attributes
+    // Methods
     //--------------------------------------------------
 
     public void changeText(String data) {
